@@ -1,12 +1,18 @@
 // State: what data do we need to keep track of?
+
+
 var wins = 0;
 var losses = 0;
 var draws = 0;
+var OPTIONS = ["r","p","s"]
+
+do {
+
+
 var userChoice = "";
 var computerChoice = "";
-var OPTIONS = ["r","p","s"]
 var outcomeMessage = ""
-
+var playAgain = true
 // What are the steps?
 
 // 1. Show prompt asking for R,P,S (UI)
@@ -59,7 +65,7 @@ if (userChoice === "r" && computerChoice === "r"){
 } else if (userChoice === "r" && computerChoice ==="p"){
     losses = losses + 1;
     outcomeMessage = "Technology won.";
-} else if (userChoice === "p" && computerChoice === "r"{
+} else if (userChoice === "p" && computerChoice === "r"){
     wins = wins +1;
     outcomeMessage = "You won!";
 } else if (userChoice ==="p" && computerChoice ==="s"){
@@ -91,6 +97,13 @@ if (userChoice === "r" && computerChoice === "r"){
 alert(outcomeMessage + "wins " + wins + "draws " + draws + "losses " + losses)
 
 outcomeMessage = ""
+
+document.getElementById("wins").innerHTML = "Wins: " + wins;
+document.getElementById("losses").innerHTML = "Losses: " + losses;
+document.getElementById("draws").innerHTML = "Draws: " + draws;
+playAgain = window.confirm("Do you want to play again?")
+
+} while (playAgain = true) ;
 
 //    6.3 if user scissors:
 //      6.3.1 if cpu rock then add 1 to losses
