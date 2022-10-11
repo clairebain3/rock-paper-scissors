@@ -12,14 +12,13 @@ do {
 var userChoice = "";
 var computerChoice = "";
 var outcomeMessage = ""
-var playAgain = true
+// var playAgain = true
 // What are the steps?
 
 // 1. Show prompt asking for R,P,S (UI)
 
 userChoice = prompt("Choose R, P, or S.")
 userChoice = userChoice.toLowerCase()
-alert (userChoice)
 
 
 // 2. User submits selection (Event)
@@ -94,7 +93,7 @@ if (userChoice === "r" && computerChoice === "r"){
 
 
 
-alert(outcomeMessage + "wins " + wins + "draws " + draws + "losses " + losses)
+alert(outcomeMessage)
 
 outcomeMessage = ""
 
@@ -103,7 +102,12 @@ document.getElementById("losses").innerHTML = "Losses: " + losses;
 document.getElementById("draws").innerHTML = "Draws: " + draws;
 playAgain = window.confirm("Do you want to play again?")
 
-} while (playAgain = true) ;
+
+} while (playAgain === true) ;
+
+document.getElementById("wins").innerHTML = "Wins: " + wins;
+document.getElementById("losses").innerHTML = "Losses: " + losses;
+document.getElementById("draws").innerHTML = "Draws: " + draws;
 
 //    6.3 if user scissors:
 //      6.3.1 if cpu rock then add 1 to losses
